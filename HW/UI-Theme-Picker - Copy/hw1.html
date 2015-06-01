@@ -1,0 +1,66 @@
+     <!DOCTYPE html>
+
+<html data-ng-app="HW1"> 
+	<head>
+		<title>HW1</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="hw1.css">
+	</head>
+
+	<body data-ng-controller="mainController as ctrl" data-ng-class="ctrl.themeSelection.theme">
+		<div class="container-fluid" style="padding-top:5px;">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="jumbotron">						
+						<h1 class="panel-title">Themes <small><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <span data-ng-bind="ctrl.themeSelection.name"></span></small></h1>
+						Select Theme:
+				 		<form role="form" class="form form-inline">
+							<div class="form-group radio" data-ng-repeat="themeList in ctrl.themesList">
+								<label class="space-right"><input type="radio" name="theme" data-ng-value="themeList" data-ng-model="ctrl.themeSelection"><span data-ng-bind="themeList.name"></span></label>
+							</div>
+						</form>							
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="panel panel-default" data-ng-class="ctrl.themeSelection.shade1">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel 1 - Shade 1</h3>
+						</div>
+						<div class="panel-body">
+							<label>Show/Hide:
+								<input type="checkbox" ng-model="ctrl.checkboxValue">
+							</label>
+							<h2>List Folders:</h3>
+							<div data-ng-repeat="mainList in ctrl.mainList">
+								<h4 data-ng-bind="mainList.name"></h4>
+								<ul data-ng-if="ctrl.checkboxValue">
+									<li data-ng-repeat="file in mainList.files"><span data-ng-bind="file"></span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="panel panel-default" data-ng-class="ctrl.themeSelection.shade2">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel 2 - Shade 2</h3>
+						</div>
+						<div class="panel-body">
+							<span data-ng-bind="ctrl.placeholder"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="hw1.js"></script>
+	</body>
+</html>
