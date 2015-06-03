@@ -1,0 +1,25 @@
+<!DOCTYPE>
+
+<html data-ng-app="lesson5App">
+<head>
+	<title>Lesson 5</title>
+</head>
+<body>
+	<div data-ng-controller="myCtrl as ctrl">
+		<input type="text" data-ng-model="ctrl.themes.kRed.div1">
+	</div>
+
+	<div data-ng-controller="myCtrl2 as ctrl2">
+		<div data-ng-bind="ctrl2.themes.kRed.div1"></div>
+
+		<h1 data-ng-bind="ctrl2.favoriteColor"></h1>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="Lesson5Services.js"></script>
+	<script src="Lesson5.js"></script>
+
+</body>
+
+</html>
