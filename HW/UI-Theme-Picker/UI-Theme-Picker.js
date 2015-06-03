@@ -5,7 +5,11 @@ mod.controller("mainController", function(){
 	
 	self.checkboxValue = true;
 
-	self.mainList = {"Folder1":"#00FF00","Red":"#FF0000","Blue":"#0000FF"};
+	self.mainList = {
+		"Folder1":"#00FF00",
+		"Red":"#FF0000",
+		"Blue":"#0000FF"
+	};
 
 	self.themesList = [{
 		"name": "Blue",
