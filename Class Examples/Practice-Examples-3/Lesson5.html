@@ -12,7 +12,35 @@
 	<div data-ng-controller="myCtrl2 as ctrl2">
 		<div data-ng-bind="ctrl2.themes.kRed.div1"></div>
 
-		<h1 data-ng-bind="ctrl2.favoriteColor"></h1>
+		<h1 data-ng-bind="ctrl2.secretCode"></h1>
+
+		<div data-ng-repeat="car in ctrl2.cars track by car.make">
+			<div data-ng-bind="car.make"></div>
+			<div data-ng-bind="car.model"></div>
+			<div data-ng-bind="car.year"></div>
+			<div data-ng-bind="car.age"></div>
+		</div>
+	</div>
+
+	<div data-ng-controller="myCtrl3 as ctrl3">
+
+		<h1>My Car</h1>
+		<div data-ng-bind="ctrl3.myCar.make"></div>
+		<div data-ng-bind="ctrl3.myCar.model"></div>
+		<input type="number" data-ng-model="ctrl3.myCar.year" data-ng-change="ctrl3.myCar.updateAge()">
+		<div data-ng-bind="ctrl3.myCar.age"></div>
+
+		<h1>My Car 2</h1>
+		<div data-ng-bind="ctrl3.myCar2.make"></div>
+		<div data-ng-bind="ctrl3.myCar2.model"></div>
+		<input type="number" data-ng-model="ctrl3.myCar2.year" data-ng-change="ctrl3.myCar2.updateAge()">
+		<div data-ng-bind="ctrl3.myCar2.age"></div>
+
+		<h1>My Standard Car</h1>
+		<div data-ng-bind="ctrl3.standardCar.make"></div>
+		<div data-ng-bind="ctrl3.standardCar.model"></div>
+		<input type="number" data-ng-model="ctrl3.standardCar.year" data-ng-change="ctrl3.standardCar.updateAge()">
+		<div data-ng-bind="ctrl3.standardCar.age"></div>
 	</div>
 
 
