@@ -1,6 +1,6 @@
 (function(app){
 
-	app.value("THEMES", {
+	app.constant("THEMES", {
 		kRed: {
 			div1:"red"
 		},
