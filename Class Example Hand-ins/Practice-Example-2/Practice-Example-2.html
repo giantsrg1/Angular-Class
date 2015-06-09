@@ -1,0 +1,71 @@
+<!DOCTYPE>
+
+<html data-ng-app="MainApp">
+	<head>
+		<title>Practice-Example-2</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">		
+		<link rel="stylesheet" href="Practice-Example-2.css">
+	</head>
+
+	<body data-ng-controller="controller as ctrl">
+		<div class="container-fluid">
+			<div class="row top-space">
+				<div class="col-xs-12">
+					<label for="studentName">Student Name</label>
+    				<input type="text" class="form-control" id="studentName" placeholder="Enter Name" data-ng-model="ctrl.student.Name">
+				</div>
+			</div>
+			<div class="row top-space">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Assignments</h3>
+						</div>
+						<div class="panel-body">
+							<label for="assignmentName">Name</label>
+    						<input type="text" class="form-control" id="assignmentName" placeholder="Enter Name" data-ng-model="ctrl.AssignmentInput.Name">
+    						<label for="assignmentGrade">Grade</label>
+    						<input type="number" class="form-control" id="assignmentGrade" placeholder="Enter Grade" data-ng-model="ctrl.AssignmentInput.Grade">
+    						<button class="btn btn-default top-space" data-ng-click="ctrl.AddAssignmentToStudent()">Add</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="row top-space" data-ng-if="(ctrl.student.Assignments.length > 0)">
+				<div class="col-xs-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Assignment List</h3>
+						</div>
+						<div class="panel-body">
+							<ul>
+								<li data-ng-repeat="assignment in ctrl.student.Assignments">
+									<span data-ng-bind="assignment.Name"></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xs-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Student Stats</h3>
+						</div>
+						<div class="panel-body">
+							<div>Average: <span data-ng-bind="ctrl.student.average"></span></div>
+							<div>letterGrade: <span data-ng-bind="ctrl.student.letterGrade"></span></div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="Practice-Example-2-Services.js"></script>
+		<script src="Practice-Example-2-Controller.js"></script>
+	</body>
+</html>

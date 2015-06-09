@@ -8,7 +8,8 @@
 	<body data-ng-controller="mainCtrl as ctrl">
 
 		<div data-ng-repeat="contact in ctrl.contacts">
-			<input type="radio" name="userContact" data-ng-value="contact" data-ng-model="ctrl.userSelection"><span data-ng-bind="contact.position"></span>
+			<input type="radio" name="userContact" data-ng-value="contact" data-ng-model="ctrl.userSelection">
+			<span data-ng-bind="contact.position"></span>
 		</div>
 
 		<div>
