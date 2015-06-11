@@ -6,7 +6,7 @@
 		"passFlag" : true
 	},
 	{
-		"grade" : "B",		
+		"B" : "B",		
 		"maxValue" : 89,
 		"minValue" : 80,
 		"passFlag" : true
