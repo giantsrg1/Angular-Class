@@ -57,6 +57,11 @@
 						<div class="panel-body">
 							<div>Average: <span data-ng-bind="ctrl.student.average"></span></div>
 							<div>letterGrade: <span data-ng-bind="ctrl.student.letterGrade"></span></div>
+							<div>
+								Pass/Fail: 
+								<span data-ng-if="ctrl.student.pass" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+								<span data-ng-if="!ctrl.student.pass" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							</div>
 						</div>
 					</div>
 

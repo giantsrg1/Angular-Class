@@ -6,7 +6,7 @@
 		"passFlag" : true
 	},
 	{
-		"B" : "B",		
+		"grade" : "B",		
 		"maxValue" : 89,
 		"minValue" : 80,
 		"passFlag" : true
@@ -43,6 +43,7 @@
 
 			this.average = StudentService.getAverage(this.Assignments);
 			this.letterGrade = StudentService.getLetterGrade(this.average);
+			this.pass = StudentService.getPassingFlag(this.letterGrade);
 		};
 
 		return Student;
@@ -66,10 +67,18 @@
 			for(var i = 0; i < GRADEGRID.length; i++){
 				var max = GRADEGRID[i].maxValue;
 				var min = GRADEGRID[i].minValue;
-				if(value < max && value >= min){
+				if(value <= max && value >= min){
 					return GRADEGRID[i].grade;
 				};
 			};
+		};
+
+		self.getPassingFlag = function(value){
+			for(var i = 0; i < GRADEGRID.length; i++){
+				if(GRADEGRID[i].grade === value){
+					return GRADEGRID[i].passFlag;
+				}
+			}
 		};
 	});
 
