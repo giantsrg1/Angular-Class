@@ -38,7 +38,7 @@
 		var MyResourceObject = MyResource;
 
 		self.getAddresses = function(){
-			MyResourceObject.getAddress({limit: 10, address: self.searchAddress}).$promise
+			MyResourceObject.getAddress({address: self.searchAddress}).$promise
 			.then(function onSuccess(responce){
 				self.addresses = responce.results;
 			},
