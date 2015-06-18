@@ -1,3 +1,28 @@
 <div class="container-fluid">
-
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>My People <small>and their friends.</small></h1>
+		</div>
+	</div>
+	<div class="row top-padding ">
+		<div class="col-xs-3" data-ng-repeat="person in people.people">
+			<div class="panel panel-default">
+			  <div class="panel-heading">Person: <span data-ng-bind="person.name"></span></div>
+			  <div class="panel-body">
+			    <button class="center-block btn btn-primary" data-ng-click="people.getFriends(person)" data-ng-hide="person.buttonPressed"><span data-ng-bind="person.name"></span>'s Friends</button>
+			    <div class="text-center" data-ng-show="person.buttonPressed"><span data-ng-bind="person.name"></span>'s Friends:</div>
+			    <table class="top-padding table table-condensed table-hover table-bordered" data-ng-if="person.friends">
+			    	<tr>
+			    		<th>id</th>
+			    		<th>name</th>
+			    	</tr>
+			    	<tr data-ng-repeat="friend in person.friends">
+			    		<td>{{friend.id}}</td>
+			    		<td>{{friend.name}}</td>
+			    	</tr>
+			    </table>
+			  </div>
+			</div>
+		</div>
+	</div>
 </div>

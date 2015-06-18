@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('lessonTemplate', ['ngAnimate', 'ngResource', 'ui.router', 'ui.bootstrap'])
+angular.module('Lesson9', ['ngAnimate', 'ngResource', 'ui.router', 'ui.bootstrap'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'PeopleController as people'
       });
 
     $urlRouterProvider.otherwise('/');
