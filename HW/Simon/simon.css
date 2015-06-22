@@ -1,0 +1,46 @@
+.box{
+	width:130px;
+	height:130px;
+	cursor: pointer;
+}
+
+.top-padding{
+	padding-top: 10px;
+}
+
+.instructions{
+	color: red;
+	font-weight: bold;
+}
+
+.red{
+	background-color: #7f0000;
+}
+
+.light-red{
+	background-color: #FF3232;
+}
+
+.green{
+	background-color: #006600;
+}
+
+.light-green{
+	background-color: #66FF66;
+}
+
+.blue{
+	background-color: #000099;
+}
+
+.light-blue{
+	background-color: #6666FF;
+}
+
+.yellow{
+	background-color: #cccc00;
+}
+
+.light-yellow{
+	background-color: #FFFF4C;
+}

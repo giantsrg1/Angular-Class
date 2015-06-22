@@ -1,0 +1,77 @@
+<!DOCTYPE>
+
+<html data-ng-app="SimonApp">
+<head>
+	<title>Simon</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="simon.css">
+</head>
+<body data-ng-controller="SimonMainController as Simon">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Welcome to Simon <small>Click start to begin!!</small></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="row">
+					<div class="col-xs-2">
+						<div class="box red" data-ng-click="Simon.addUserColor('red')" data-ng-class="Simon.redColor"></div>
+					</div>
+					<div class="col-xs-2">
+						<div class="box green" data-ng-click="Simon.addUserColor('green')"  data-ng-class="Simon.greenColor"></div>
+					</div>					
+				</div>
+				<div class="row top-padding">
+					<div class="col-xs-2">
+						<div class="box blue" data-ng-click="Simon.addUserColor('blue')"  data-ng-class="Simon.blueColor"></div>
+					</div>
+					<div class="col-xs-2">
+						<div class="box yellow" data-ng-click="Simon.addUserColor('yellow')"  data-ng-class="Simon.yellowColor"></div>
+					</div>	
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="panel panel-default">
+			  		<div class="panel-heading">
+				    	<h3 class="panel-title">User Clicks</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<ol>
+				    		<li data-ng-repeat="color in Simon.user.colorList track by $index">
+				    			<span data-ng-bind="color"></span>
+				    		</li>
+			    		</ol>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-xs-3" data-ng-if="Simon.showSimon">
+				<div class="panel panel-default">
+			  		<div class="panel-heading">
+				    	<h3 class="panel-title">Simon Clicks</span></h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<ol>
+				    		<li data-ng-repeat="color in Simon.simon.colorList track by $index">
+				    			<span data-ng-bind="color"></span>
+				    		</li>
+			    		</ol>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<div class="row top-padding">
+			<div class="col-xs-12">
+				<button data-ng-show="Simon.level <= 0" data-ng-click="Simon.startGame()" class="btn btn-primary">START GAME</button>
+				<h2 class="instructions" data-ng-bind="Simon.instructions"></h2>
+				<h3 data-ng-show="Simon.level > 0">Level: <span data-ng-bind="Simon.level"></span></h3>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="simonService.js"></script>
+	<script src="simon.js"></script>
+</body>
+</html>
