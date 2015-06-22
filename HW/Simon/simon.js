@@ -57,11 +57,13 @@
 				}, 3000);				
 			}
 			else if(self.user.colorList.length == self.simon.colorList.length && correct){
-				disableFlag = true;
-				self.user.colorList = [];
-				self.simon.colorList = [];
+				disableFlag = true;				
 				self.instructions = "CORRECT NEXT LEVEL!";
+				self.showSimon = true;
 				$timeout(function() {
+					self.showSimon = false;
+					self.user.colorList = [];
+					self.simon.colorList = [];
 					self.level++;
 					simon();
 				}, 3000);
