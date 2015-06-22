@@ -6,10 +6,4 @@
 
 		return Colors;
 	});
-
-	app.service("gameServices", function(){
-		var self = this;
-
-
-	})
 })(angular.module("SimonService", []))
