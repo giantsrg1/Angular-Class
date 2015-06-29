@@ -1,58 +1,39 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('lessonTemplate')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      {
-        'title': 'AngularJS',
-        'url': 'https://angularjs.org/',
-        'description': 'HTML enhanced for web apps!',
-        'logo': 'angular.png'
-      },
-      {
-        'title': 'BrowserSync',
-        'url': 'http://browsersync.io/',
-        'description': 'Time-saving synchronised browser testing.',
-        'logo': 'browsersync.png'
-      },
-      {
-        'title': 'GulpJS',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'gulp.png'
-      },
-      {
-        'title': 'Jasmine',
-        'url': 'http://jasmine.github.io/',
-        'description': 'Behavior-Driven JavaScript.',
-        'logo': 'jasmine.png'
-      },
-      {
-        'title': 'Karma',
-        'url': 'http://karma-runner.github.io/',
-        'description': 'Spectacular Test Runner for JavaScript.',
-        'logo': 'karma.png'
-      },
-      {
-        'title': 'Protractor',
-        'url': 'https://github.com/angular/protractor',
-        'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-        'logo': 'protractor.png'
-      },
-      {
-        'title': 'Bootstrap',
-        'url': 'http://getbootstrap.com/',
-        'description': 'Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.',
-        'logo': 'bootstrap.png'
-      },
-      {
-        'title': 'Angular UI Bootstrap',
-        'url': 'http://angular-ui.github.io/bootstrap/',
-        'description': 'Bootstrap components written in pure AngularJS by the AngularUI Team.',
-        'logo': 'ui-bootstrap.png'
-      }
-    ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
-      awesomeThing.rank = Math.random();
-    });
-  });
+  angular
+    .module('template')
+    .controller('MainController', MainController);
+
+  /** @ngInject */
+  function MainController($timeout, webDevTec, toastr) {
+    var vm = this;
+
+    vm.awesomeThings = [];
+    vm.classAnimation = '';
+    vm.creationDate = 1435614833625;
+    vm.showToastr = showToastr;
+
+    activate();
+
+    function activate() {
+      getWebDevTec();
+      $timeout(function() {
+        vm.classAnimation = 'rubberBand';
+      }, 4000);
+    }
+
+    function showToastr() {
+      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+      vm.classAnimation = '';
+    }
+
+    function getWebDevTec() {
+      vm.awesomeThings = webDevTec.getTec();
+
+      angular.forEach(vm.awesomeThings, function(awesomeThing) {
+        awesomeThing.rank = Math.random();
+      });
+    }
+  }
+})();
