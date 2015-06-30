@@ -1,0 +1,13 @@
+<h3><span data-ng-bind="ctrl.bookName"></span> Ingredients</h3>
+
+<div data-ng-repeat="recipe in ctrl.recipes">
+	<div data-ng-repeat="(ingre, amount) in recipe">
+		{{ingre}}, {{amount}}
+	</div>	
+</div>
+
+<input type="text" data-ng-model="ctrl.ingred" placeholder="ingred">
+
+<input type="text" data-ng-model="ctrl.amount" placeholder="amount">
+
+<button class="btn btn-primary" data-ng-click="ctrl.addRecipe()">ADD</button>

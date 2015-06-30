@@ -1,0 +1,32 @@
+
+
+<h1>Welcome to the home page</h1>
+
+<div gd-basic></div>
+
+<div gd-basic-controlled></div>
+
+<!-- <div gd-advanced book-name="{{mainCtrl.recipesBookName}}"></div>
+<div gd-advanced book-name="{{mainCtrl.recipesBookName}}"></div>
+<div gd-advanced book-name="{{mainCtrl.recipesBookName}}"></div> -->
+
+<h3>Recipe Count {{mainCtrl.recipeCount}}</h3>
+<h3 data-ng-repeat="(ingred, amount) in mainCtrl.mostRecentRecipe">
+	Most Recent: {{ingred}} => {{amount}}
+</h3>
+
+
+<div gd-advanced book-name="mainCtrl.recipesBookName"
+	 on-add-recipe="mainCtrl.recipeAddCount()" 
+	 on-update-recent="mainCtrl.updateMostRecent(userRecentRecipe)">
+</div>
+
+<div gd-advanced book-name="mainCtrl.recipesBookName" 
+	on-add-recipe="mainCtrl.recipeAddCount()" 
+	on-update-recent="mainCtrl.updateMostRecent(userRecentRecipe)">
+</div>
+
+<div gd-advanced book-name="mainCtrl.recipesBookName" 
+	on-add-recipe="mainCtrl.recipeAddCount()" 
+	on-update-recent="mainCtrl.updateMostRecent(userRecentRecipe)">
+</div>
