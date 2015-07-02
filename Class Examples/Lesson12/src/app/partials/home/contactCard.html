@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Contact
+	</div>
+	<div class="panel-body">
+		<h2>First Name: <span data-ng-bind="ctrl.contactInfo.fname"></span></h2>
+		<h2>Last Name: <span data-ng-bind="ctrl.contactInfo.lname"></span></h2>
+		<div class="pull-right">
+			<button class="btn btn-danger" data-ng-click="ctrl.deleteContact()" data-ng-hide="ctrl.delete">DELETE</button>
+			<div data-ng-hide="!ctrl.delete">
+				<button class="btn btn-danger" data-ng-click="ctrl.confirmedDelete()">Yes</button>
+				<button class="btn btn-primary" data-ng-click="ctrl.cancelDelete()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
