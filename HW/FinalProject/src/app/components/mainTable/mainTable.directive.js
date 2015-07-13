@@ -24,8 +24,8 @@
     var self = this;
 
     self.clickRow = function(rowValue){
-      self.onClickRow({value: rowValue})
-    }
+      self.onClickRow({value: rowValue});
+    };
 
     
   }

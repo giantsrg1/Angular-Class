@@ -9,16 +9,20 @@
   function teamController(server) {
     var self = this;
 
-    self.teamHeaders = ["Team"]
+    self.teamHeaders = ["Team"];
 
-    server.getArray({link: "/assets/teamProfile.json"}).$promise.then(function(data){
-      self.teamsData = data;
-    });
+    self.getData = function(){
+      server.getArray({link: "/assets/teamProfile.json"}).$promise.then(function(data){
+        self.teamsData = data;
+      });
+    };
+
+    self.getData();
 
     self.changeListOfTeams = function(){
       self.listOfTeams = [];
       self.listOfTeams.push({"Team":self.teamSelect.Team});
-    }
+    };
 
     self.onClick = function(value){
       self.playerHeaders = ["Name", "Position"];
@@ -29,6 +33,6 @@
           self.listOfPlayers = self.teamsData[i].Players;
         }
       }
-    }
+    };
   }
 })();

@@ -19,7 +19,6 @@
   }
 
   function cardController(){
-    var self = this;
 
 
   }

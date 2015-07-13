@@ -20,7 +20,6 @@
   }
 
   function panelController(){
-    var self = this;
   }
 
 
