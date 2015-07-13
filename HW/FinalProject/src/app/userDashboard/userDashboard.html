@@ -1,0 +1,20 @@
+<!-- UserController as user -->
+
+<div class="row">
+	<div class="col-xs-3">
+		<div main-panel title='user.userTitle'>
+			<div main-card profile="user.profile"></div>
+		</div>
+	</div>
+	<div class="col-xs-9">
+		<div main-well>
+			<h4 class="text-center">Favorite Teams</h4>
+		</div>		
+		<div main-table headers='user.headers' values='user.profile.favorites'></div>
+
+		<div main-well>
+			<h4 class="text-center">Fantasy Teams</h4>
+		</div>
+		<div main-table headers='user.headers2' values='user.profile.fantasyTeams'></div>
+	</div>
+</div>

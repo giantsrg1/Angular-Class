@@ -1,0 +1,21 @@
+{
+	"fname" : "Scott",
+	"lname" : "Goldstein",
+	"img" : "/assets/images/users/scottGoldstein.jpg",
+	"birthday" : "June 23, 1990",
+	"sex":"Male",
+	"username" : "Giantsrg1",
+	"city" : "New York",
+	"favorites" : [{
+		"Sport":"Football",
+		"Team":"New York Giants"
+	},{
+		"Sport":"Baseball",
+		"Team":"New York Mets"
+	}],
+	"fantasyTeams": [{
+		"Name": "fantasyTeam1"
+	},{
+		"Name": "fantasyTeam2"
+	}]
+}

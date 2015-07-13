@@ -1,0 +1,32 @@
+<!-- teamController as teams -->
+
+<div class="row">
+	<div class="col-xs-3">
+		<label class="pull-left">Select Sport:</label>
+		<select class="form-control"
+				id="select"
+				data-ng-model="teams.teamSelect" 
+				data-ng-options="out.Sport for out in teams.teamsData" 
+				data-ng-change="teams.changeListOfTeams()">
+		</select>
+
+		<div ng-show='teams.listOfTeams' 
+			 style="margin-top: 15px;cursor: pointer;" 
+			 main-table 
+			 headers='teams.teamHeaders' 
+		   	 values='teams.listOfTeams'
+	   		 on-click-row='teams.onClick(value)'></div>
+	</div>
+	<div class="col-xs-9">
+		<div main-well ng-show='teams.listOfPlayers'>
+			<h4 class="text-center">List of Players</h4>
+		</div>		
+
+		<div ng-hide='teams.listOfPlayers' class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Please Select a Sport then Team!</div>
+
+		<div ng-show='teams.listOfPlayers'
+			 main-table
+			 headers='teams.playerHeaders' 
+		   	 values='teams.listOfPlayers'></div>
+	</div>
+</div>

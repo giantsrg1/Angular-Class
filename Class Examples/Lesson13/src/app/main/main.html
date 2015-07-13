@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div ng-include="'components/navbar/navbar.html'"></div>
+
+  <div>
+    
+    <div class="row">
+      <div class="col-xs-2">
+        Filter Toppings
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control" ng-model="ctrl.filterObject.topping.type">
+      </div>
+
+    </div>
+
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <label>Available Recipes</label>
+      </div>
+      <div class="col-xs-4">
+       
+       <div ng-repeat="recipe in ctrl.recipes | filter :ctrl.filterObject" 
+            ng-bind="recipe.name">
+         
+       </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

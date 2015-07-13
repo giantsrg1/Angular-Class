@@ -1,0 +1,38 @@
+[{
+	"Team": "New York Giants",
+	"Sport" : "Football",
+	"Players" : [{
+		"Name": "Eli Manning",
+		"Position": "QB"
+	},
+	{
+		"Name": "Odell Beckham Jr.",
+		"Position": "WR"
+	},
+	{
+		"Name": "Rashed Jennings",
+		"Position": "RB"
+	},{
+		"Name": "Scott Goldstein",
+		"Position": "LB"
+	}]
+},
+{
+	"Team": "New York Mets",
+	"Sport": "Baseball",
+	"Players" : [{
+		"Name": "Bartolo Colon",
+		"Position": "Pitcher"
+	},
+	{
+		"Name": "Matt Harvey",
+		"Position": "Pitcher"
+	},
+	{
+		"Name": "Dillon Gee",
+		"Position": "Pitcher"
+	},{
+		"Name": "Steve Matz",
+		"Position": "Pitcher"
+	}]
+}]

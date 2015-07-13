@@ -1,0 +1,17 @@
+<!-- tableController as tableCtrl -->
+
+<table class="table table-bordered table-condensed table-striped table-hover">
+	<thead>
+		<tr>
+			<th data-ng-repeat='header in tableCtrl.headers'>{{::header}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat='value in tableCtrl.values track by $index'>
+			<td data-ng-click="tableCtrl.clickRow(value[header])"
+				data-ng-repeat='header in tableCtrl.headers'>
+					{{value[header]}}
+			</td>
+		</tr>
+	</tbody>
+</table>
