@@ -16,6 +16,7 @@
       server.get({link: "/assets/userProfile.json"}).$promise.then(function(data){
         self.profile = data;
         self.userTitle = "Personal Info - " + self.profile.username;
+        return data;
       });  
     };
 

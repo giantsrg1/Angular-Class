@@ -8,21 +8,13 @@ describe('template - module', function(){
 		var scope;
 
 		beforeEach(inject(function($controller,$rootScope){
-			scope = $rootScope.$new();
-      		toTest = $controller('UserController', {$scope: scope});
+      		toTest = $controller('UserController');
 		}));
 
 		it('should get json string from file', function(){
 			var result = toTest.getData;
-			var test = false;
-			if(typeof(result) === "function"){
-				test = true;
-			}
 
-			expect(test).toBe(true);
+			expect(result).toBeDefined();
 		});
-
 	});
-
-
 });

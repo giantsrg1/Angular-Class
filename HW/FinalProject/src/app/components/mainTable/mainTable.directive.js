@@ -26,8 +26,6 @@
     self.clickRow = function(rowValue){
       self.onClickRow({value: rowValue});
     };
-
-    
   }
 
 })();
