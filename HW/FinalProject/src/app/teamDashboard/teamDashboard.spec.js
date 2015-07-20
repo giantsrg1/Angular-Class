@@ -7,9 +7,8 @@ describe('template - module', function(){
 		var toTest;
 		var scope;
 
-		beforeEach(inject(function($controller,$rootScope){
-			scope = $rootScope.$new();
-      		toTest = $controller('teamController', {$scope: scope});
+		beforeEach(inject(function($controller){			
+      		toTest = $controller('teamController');
 		}));
 
 		it('should get json string from file', function(){
